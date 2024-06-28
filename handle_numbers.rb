@@ -3,7 +3,7 @@ module NumberInWord
     def handle_tens(num)
       @output = ''
       tens = (num / 10).round * 10
-      @output += NumberInWord.lookfor(tens)
+      @output += handle_nums(tens)
 
       digit = num - tens
 
