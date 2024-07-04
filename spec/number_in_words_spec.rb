@@ -20,10 +20,10 @@ RSpec.describe 'NumberInWord' do
     expect(200.in_words).to eq("two hundred")        
   end
 
-  # it 'converts thousands in words' do
-  #   expect(1000.in_words).to eq("one thousand")
-  #   expect(3000.in_words).to eq("three thousand")
-  #   expect(10000.in_words).to eq("ten thousand")
-  #   expect(21000.in_words).to eq("twenty-one thousand")
-  # end
+  it 'converts thousands in words' do
+    expect(1000.in_words).to eq("one thousand")
+    expect(3000.in_words).to eq("three thousand")
+    # expect(10000.in_words).to eq("ten thousand")
+    # expect(21000.in_words).to eq("twenty-one thousand")
+  end
 end

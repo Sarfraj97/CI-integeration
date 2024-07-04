@@ -33,7 +33,8 @@ module NumberInWord
     }.freeze
 
     POWER_OF_TENS = {
-      2 => "hundred"
+      2 => "hundred",
+      3 => "thousand"
     }
   end
 end
