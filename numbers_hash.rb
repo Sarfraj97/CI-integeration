@@ -1,8 +1,7 @@
 module NumberInWord
   class NumberHash
     DEFINITIONS = 
-    {
-      00 => { number: 'hundred'},
+    {      
       0 => { number: 'zero', ordinal: 'zeroth' },
       1 => { number: 'one', ordinal: 'first' },
       2 => { number: 'two', ordinal: 'second', fraction: { singular: 'half', plural: 'halves' } },
@@ -32,5 +31,9 @@ module NumberInWord
       80 => { number: 'eighty', ordinal: 'eightieth' },
       90 => { number: 'ninety', ordinal: 'ninetieth' }
     }.freeze
+
+    POWER_OF_TENS = {
+      2 => "hundred"
+    }
   end
 end
