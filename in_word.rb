@@ -12,6 +12,8 @@ module NumberInWord
         return handle_tens(@num)
       elsif @num < 20
         return handle_nums(@num)
+      else
+        return handle_others(@num)
       end
     end
   end

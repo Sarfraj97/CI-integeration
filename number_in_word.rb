@@ -1,7 +1,6 @@
 require './in_word.rb'
 
-module NumberInWord
-  
+module NumberInWord  
   def in_words
     InWord.new(self).in_words
   end

@@ -2,6 +2,7 @@ module NumberInWord
   class NumberHash
     DEFINITIONS = 
     {
+      00 => { number: 'hundred'},
       0 => { number: 'zero', ordinal: 'zeroth' },
       1 => { number: 'one', ordinal: 'first' },
       2 => { number: 'two', ordinal: 'second', fraction: { singular: 'half', plural: 'halves' } },
