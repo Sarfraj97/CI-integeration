@@ -12,8 +12,10 @@ module NumberInWord
         return handle_tens(@num)
       elsif @num < 20
         return handle_nums(@num)
-      else
+      elsif @num < 1000
         return handle_others(@num)
+      else
+        return handle_above_thousands(@num)
       end
     end
   end

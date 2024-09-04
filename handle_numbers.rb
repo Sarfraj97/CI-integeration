@@ -1,5 +1,19 @@
 module NumberInWord
   class HandleNumbers
+    def handle_above_thousands(num)
+      numbers = separate_numbers(num)
+      
+      numbers.reverse.each_with_index do |num, index|
+        if index == 0
+          @output = InWord.new(num).in_words + ' ' + handle_sequence(index)
+        else
+          @output = InWord.new(num).in_words + ' ' + handle_sequence(index) + @output
+        end
+      end
+
+      return @output
+    end
+
     def handle_others(num)      
       @output = ''
       while num.to_s.size > 2      
@@ -32,6 +46,10 @@ module NumberInWord
       NumberHash::POWER_OF_TENS[zeros]
     end
 
+    def handle_sequence(zeros)
+      NumberHash::SEQUENCE_OF_POWER[zeros]
+    end
+
     private
 
     def getTens(num)
@@ -39,6 +57,17 @@ module NumberInWord
       zeros = splitNum[1..-1].size
       number = splitNum[0]
       [zeros, number]
+    end
+
+    def separate_numbers(num)
+      arr = []
+      numbers = num.to_s.split('')
+      size = numbers.length
+      hundreds = numbers.last(3).join('')
+      if size > 3 
+        numbers.first(size-3).reverse.each_slice(2).map{ |i| i.join }.each { |k|  arr.unshift k.reverse.to_i }
+      end
+      arr << hundreds.to_i
     end
   end
 end

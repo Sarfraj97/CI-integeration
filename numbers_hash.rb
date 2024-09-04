@@ -36,5 +36,13 @@ module NumberInWord
       2 => "hundred",
       3 => "thousand"
     }
+
+    SEQUENCE_OF_POWER = {
+      0 => '',
+      1 => 'thousand ',
+      2 => 'lakhs ',
+      3 => 'crore ',
+      4 => 'arab '
+    }
   end
 end
