@@ -1,26 +1,29 @@
 module NumberInWord
   class HandleNumbers
     def handle_above_thousands(num)
+      @output = ''
       numbers = separate_numbers(num)
       
       numbers.reverse.each_with_index do |num, index|
+        next if num == 0
+
         if index == 0
-          @output = InWord.new(num).in_words + ' ' + handle_sequence(index)
+          @output = InWord.new(num).in_words + handle_sequence(index)
         else
-          @output = InWord.new(num).in_words + ' ' + handle_sequence(index) + @output
+          @output = InWord.new(num).in_words + handle_sequence(index) + @output
         end
       end
 
       return @output
     end
 
-    def handle_others(num)      
+    def handle_others(num)
       @output = ''
       while num.to_s.size > 2      
         zeros, number = getTens(num)
         @output += handle_nums(number.to_i) + ' ' + handle_power(zeros)
         num = num.to_s[1..-1].to_i      
-      end      
+      end
       @output += InWord.new(num).in_words == 'zero' ? '' : ' and ' + InWord.new(num).in_words
     end
     

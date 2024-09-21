@@ -39,10 +39,10 @@ module NumberInWord
 
     SEQUENCE_OF_POWER = {
       0 => '',
-      1 => 'thousand ',
-      2 => 'lakhs ',
-      3 => 'crore ',
-      4 => 'arab '
+      1 => ' thousand',
+      2 => ' lakhs',
+      3 => ' crore',
+      4 => ' arab'
     }
   end
 end
